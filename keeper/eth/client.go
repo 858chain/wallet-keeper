@@ -294,12 +294,7 @@ func (client *Client) ListUnspentMin(minConf int) ([]btcjson.ListUnspentResult, 
 
 // Move
 func (client *Client) Move(from, to string, amount float64) (bool, error) {
-	_, err := client.SendFrom(from, to, amount)
-	if err != nil {
-		return false, err
-	}
-
-	return true, nil
+	return false, keeper.ErrNotSupport
 }
 
 // persistAccountMap write `accountAddressMap` into file `client.accountAddressMap`,
