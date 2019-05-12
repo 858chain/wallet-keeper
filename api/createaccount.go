@@ -8,7 +8,6 @@ import (
 	"github.com/cmingxu/wallet-keeper/keeper"
 
 	"github.com/gin-gonic/gin"
-	log "github.com/sirupsen/logrus"
 )
 
 var ACCOUNT_REGEXP = regexp.MustCompile("^([a-z|A-Z|0-9])+$")
@@ -38,7 +37,6 @@ func (api *ApiServer) CreateAccount(c *gin.Context) {
 
 	created, err := keeper.CreateAccount(account)
 	if err != nil {
-		log.Error(err)
 		c.JSON(http.StatusBadRequest, R(fmt.Sprint(err)))
 	} else {
 		c.JSON(http.StatusOK, R(created))

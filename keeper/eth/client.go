@@ -52,7 +52,7 @@ type Client struct {
 	accountAddressLock sync.Mutex
 }
 
-func NewClient(host, walletDir, accountFilePath, password, logDir string) (*Client, error) {
+func NewClient(host, walletDir, password, accountFilePath, logDir string) (*Client, error) {
 	client := &Client{
 		walletDir:          walletDir,
 		password:           password,

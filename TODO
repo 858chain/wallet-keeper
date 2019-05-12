@@ -11,3 +11,5 @@
  - usdt need integration test
  - eth implementation
 
+[2019-05-11 11:51]
+- do not panic if no  coin-type header provides
